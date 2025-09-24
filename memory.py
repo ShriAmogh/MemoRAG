@@ -40,7 +40,7 @@ def cached_node(query: str, tool: str, call_fn, threshold: float = 0.85):
         if entry["tool"] == tool:
             sim = cosine_similarity(query_vec, entry["embedding"])
             if sim >= threshold:
-                print(f"[Cache Hit] {tool} reusing cached result (similarity={sim:.2f})")
+                print(f"[Cache Hit] [{tool}] reusing cached result (similarity={sim:.2f})")
                 return entry["output"]
 
 
