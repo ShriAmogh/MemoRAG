@@ -29,6 +29,7 @@ llm = HuggingFacePipeline(pipeline=pipe)
 
 
 def call_retriever(state: AgentState) -> AgentState:
+    global tools
     query = state["input"]
 
     def run(query):
@@ -81,6 +82,7 @@ workflow.add_edge("retriever", END)
 app = workflow.compile()
 
 
+'''
 # --- Examples ---
 print("\n--- Example 1: Tell me about protein. ---")
 print(app.invoke({"input": "Tell me about protein."}))
@@ -90,3 +92,5 @@ print(app.invoke({"input": "what is 1+1 ?"}))
 
 print("\n--- Example 3: Vitamin B12 search ---")
 print(app.invoke({"input": "Tell me about Vitamin B12 importance"}))
+
+'''
