@@ -1,0 +1,5 @@
+chroma_db/
+cache.json
+__pycache__/
+venv/
+semantic_cache.json
